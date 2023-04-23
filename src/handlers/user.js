@@ -1,7 +1,7 @@
 const { createJWT, hashPassword } = require('../modules/auth');
 const { v4 } = require('uuid');
 
-const createUser = async (req, res, next) => {
+const createNewUser = async (req, res, next) => {
   try {
     const user = {
       id: v4(),
@@ -17,5 +17,5 @@ const createUser = async (req, res, next) => {
 };
 
 module.exports = {
-  createUser,
+  createNewUser,
 };
