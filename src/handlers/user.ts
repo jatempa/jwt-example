@@ -1,5 +1,5 @@
-const { createJWT, hashPassword } = require('../modules/auth');
-const { v4 } = require('uuid');
+import { createJWT, hashPassword } from '../modules/auth';
+import { v4 } from 'uuid';
 
 const createNewUser = async (req, res, next) => {
   try {
@@ -16,6 +16,4 @@ const createNewUser = async (req, res, next) => {
   }
 };
 
-module.exports = {
-  createNewUser,
-};
+export default createNewUser;

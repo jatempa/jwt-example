@@ -1,5 +1,5 @@
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
 
 const comparePasswords = (password, hash) => {
   return bcrypt.compare(password, hash);
@@ -51,9 +51,4 @@ const protect = (req, res, next) => {
   }
 };
 
-module.exports = {
-  comparePasswords,
-  hashPassword,
-  createJWT,
-  protect,
-};
+export { comparePasswords, hashPassword, createJWT, protect };
