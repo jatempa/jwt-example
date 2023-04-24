@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 app.use('/api', protect, router);
 // Create user
-app.post('/user/create', createNewUser);
+app.post('/user', createNewUser);
 
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
