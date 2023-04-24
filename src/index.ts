@@ -4,7 +4,7 @@ import express from 'express';
 import router from './routes/router';
 import cors from 'cors';
 import { protect } from './modules/auth';
-import createNewUser from './handlers/user';
+import { createNewUser, signIn } from './handlers/user';
 // CONSTANTS
 const PORT = process.env.PORT || 8080;
 // enable modules
@@ -20,6 +20,8 @@ app.get('/', (req, res) => {
 app.use('/api', protect, router);
 // Create user
 app.post('/user', createNewUser);
+// Sign in
+app.post('/signIn', signIn);
 
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
